@@ -2,24 +2,23 @@
 
 [ext_resource type="Script" uid="uid://e5c0oy0a3pjr" path="res://frog_1.gd" id="1_jpmgs"]
 [ext_resource type="Texture2D" uid="uid://dlbo84c7t15ha" path="res://Assets/froschi.png" id="1_ryn1c"]
-[ext_resource type="Shader" uid="uid://y14pgknwhhmf" path="res://Shader/lowpoly.gdshader" id="2_suq6n"]
+[ext_resource type="Shader" uid="uid://cq8sp1g523y30" path="res://Shader/lowpoly.gdshader" id="2_suq6n"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_16n6q"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jpmgs"]
 shader = ExtResource("2_suq6n")
-shader_parameter/cell_size = 20.142000719245
-shader_parameter/randomness = 0.87200004142
+shader_parameter/cell_size = 16.486000308085
+shader_parameter/randomness = 0.9
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jlbju"]
 radius = 174.42764
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=279591520]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=279591520 groups=["player"]]
 script = ExtResource("1_jpmgs")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1383631476]
-material = SubResource("ShaderMaterial_16n6q")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1293336409]
+material = SubResource("ShaderMaterial_jpmgs")
 texture = ExtResource("1_ryn1c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=704902560]
-visible = false
 shape = SubResource("CircleShape2D_jlbju")
