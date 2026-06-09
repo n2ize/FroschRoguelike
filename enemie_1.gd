@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 var player = null
 const Deatheffect = preload("res://gpu_particles_deathparticles.tscn")
+signal died
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
@@ -28,6 +29,7 @@ func _physics_process(delta: float) -> void:
 	
 func _on_body_entered(body): #play here whatever should happen
 	if body.is_in_group("player"):
+		died.emit()
 		var effect = Deatheffect.instantiate()
 		effect.position = position
 		get_parent().add_child(effect)
