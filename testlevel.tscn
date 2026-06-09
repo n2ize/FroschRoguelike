@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dua0gqq8ojiyu"]
+
+[ext_resource type="Script" uid="uid://celcurdbyk2rl" path="res://testlevel.gd" id="1_b5yu0"]
+[ext_resource type="Shader" uid="uid://n7f74f6m0d8m" path="res://Shader/backgroundlowpoly.gdshader" id="1_w3snd"]
+[ext_resource type="Texture2D" uid="uid://ceml7bjpwfpgm" path="res://Assets/icon.svg" id="2_pi5jr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pi5jr"]
+shader = ExtResource("1_w3snd")
+shader_parameter/cell_size = 3.000000095
+shader_parameter/speed = 1.382000065645
+shader_parameter/color_dark = Color(0.17, 0.17, 0.16, 1)
+shader_parameter/color_mid = Color(0.27, 0.27, 0.25, 1)
+shader_parameter/color_light = Color(0.37, 0.37, 0.35, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kx2s4"]
+font_size = 50
+
+[node name="Node2D" type="Node2D" unique_id=1048977676]
+script = ExtResource("1_b5yu0")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=81473670]
+material = SubResource("ShaderMaterial_pi5jr")
+offset_right = 1968.2333
+offset_bottom = 1724.0
+texture = ExtResource("2_pi5jr")
+
+[node name="Timer" type="Timer" parent="." unique_id=829925160]
+wait_time = 2.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=723789655]
+
+[node name="Score" type="Label" parent="CanvasLayer" unique_id=298552225]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_right = 46.0
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "0"
+label_settings = SubResource("LabelSettings_kx2s4")

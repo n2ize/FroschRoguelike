@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://iorilava3kuh"]
+
+[ext_resource type="Material" uid="uid://clr1sfkqjui6y" path="res://Shader/deatheffectmaterial.tres" id="1_2nveu"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" unique_id=899846994]
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+process_material = ExtResource("1_2nveu")
