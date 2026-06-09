@@ -3,11 +3,12 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 var player = null
+const Deatheffect = preload("res://gpu_particles_deathparticles.tscn")
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	$Area2D.body_entered.connect(_on_body_entered)
-	print("ich lebe")
+	
 	
 func _physics_process(delta: float) -> void:
 	if player == null:
@@ -25,6 +26,10 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * SPEED + separation
 	move_and_slide()
 	
-func _on_body_entered(body):
+func _on_body_entered(body): #play here whatever should happen
 	if body.is_in_group("player"):
-		print("hit")
+		var effect = Deatheffect.instantiate()
+		effect.position = position
+		get_parent().add_child(effect)
+		effect.restart()
+		queue_free()

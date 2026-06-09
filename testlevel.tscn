@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dua0gqq8ojiyu"]
 
+[ext_resource type="Script" uid="uid://celcurdbyk2rl" path="res://testlevel.gd" id="1_b5yu0"]
 [ext_resource type="Shader" uid="uid://n7f74f6m0d8m" path="res://Shader/backgroundlowpoly.gdshader" id="1_w3snd"]
 [ext_resource type="Texture2D" uid="uid://ceml7bjpwfpgm" path="res://Assets/icon.svg" id="2_pi5jr"]
 [ext_resource type="PackedScene" uid="uid://q02ls071tw71" path="res://frog_1.tscn" id="3_74kyy"]
-[ext_resource type="PackedScene" uid="uid://bddiomamtb7dg" path="res://enemie_1.tscn" id="4_kx2s4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pi5jr"]
 shader = ExtResource("1_w3snd")
@@ -14,6 +14,7 @@ shader_parameter/color_mid = Color(0.27, 0.27, 0.25, 1)
 shader_parameter/color_light = Color(0.37, 0.37, 0.35, 1)
 
 [node name="Node2D" type="Node2D" unique_id=1048977676]
+script = ExtResource("1_b5yu0")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=81473670]
 material = SubResource("ShaderMaterial_pi5jr")
@@ -24,14 +25,5 @@ texture = ExtResource("2_pi5jr")
 [node name="CharacterBody2D" parent="." unique_id=279591520 instance=ExtResource("3_74kyy")]
 scale = Vector2(0.4, 0.4)
 
-[node name="Enemie_1" parent="." unique_id=534735479 instance=ExtResource("4_kx2s4")]
-position = Vector2(1180, 334)
-metadata/_edit_group_ = true
-
-[node name="Enemie_2" parent="." unique_id=970898064 instance=ExtResource("4_kx2s4")]
-position = Vector2(1280, 723)
-metadata/_edit_group_ = true
-
-[node name="Enemie_3" parent="." unique_id=559832764 instance=ExtResource("4_kx2s4")]
-position = Vector2(565, 538)
-metadata/_edit_group_ = true
+[node name="Timer" type="Timer" parent="." unique_id=829925160]
+autostart = true
