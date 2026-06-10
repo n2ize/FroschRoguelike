@@ -9,12 +9,12 @@ radius = 7.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7281b"]
 shader = ExtResource("1_4s4u5")
-shader_parameter/cell_size = 2.6670000791825
-shader_parameter/randomness = 0.9
-shader_parameter/anim_speed = 1.4690000697775
+shader_parameter/cell_size = 2.678000079705
+shader_parameter/randomness = 0.90000004275
+shader_parameter/anim_speed = 2.0
 
 [node name="Bullet" type="Area2D" unique_id=1262204709 groups=["Bullet"]]
-scale = Vector2(5, 5)
+scale = Vector2(3, 3)
 collision_mask = 3
 script = ExtResource("1_7281b")
 
