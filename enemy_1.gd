@@ -33,6 +33,7 @@ func _on_area_entered(area): #play here whatever should happen
 		#return
 	if area.is_in_group("Bullet"):
 		died.emit() 
+		get_viewport().get_camera_2d().shake(50.0)
 		var effect = Deatheffect.instantiate()
 		effect.position = position
 		get_parent().add_child(effect)

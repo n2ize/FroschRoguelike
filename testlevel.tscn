@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://celcurdbyk2rl" path="res://testlevel.gd" id="1_b5yu0"]
 [ext_resource type="Shader" uid="uid://n7f74f6m0d8m" path="res://Shader/backgroundlowpoly.gdshader" id="1_w3snd"]
 [ext_resource type="Texture2D" uid="uid://ceml7bjpwfpgm" path="res://Assets/icon.svg" id="2_pi5jr"]
+[ext_resource type="Script" uid="uid://co8fqvcj8a84m" path="res://camera_2d.gd" id="4_kx2s4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pi5jr"]
 shader = ExtResource("1_w3snd")
@@ -20,8 +21,10 @@ script = ExtResource("1_b5yu0")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=81473670]
 material = SubResource("ShaderMaterial_pi5jr")
-offset_right = 1968.2333
-offset_bottom = 1724.0
+offset_left = -60.0
+offset_top = -154.0
+offset_right = 2002.0
+offset_bottom = 1652.1315
 texture = ExtResource("2_pi5jr")
 
 [node name="Timer" type="Timer" parent="." unique_id=829925160]
@@ -41,3 +44,7 @@ grow_horizontal = 2
 size_flags_horizontal = 4
 text = "0"
 label_settings = SubResource("LabelSettings_kx2s4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1393320248]
+anchor_mode = 0
+script = ExtResource("4_kx2s4")

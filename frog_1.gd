@@ -7,6 +7,8 @@ var last_direction = Vector2.RIGHT
 var health = 3
 var invincible = false
 
+const acc = 5000 #acceleration
+const friction = 6000
 const Deatheffect = preload("res://gpu_particles_deathparticles.tscn")
 const Hiteffect = preload("res://hitindicatorparticles.tscn")
 const Bullet = preload("res://Bullet.tscn")
@@ -29,11 +31,15 @@ func _physics_process(delta: float) -> void:
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 		last_direction = direction
-		velocity = direction * SPEED
+		velocity = velocity.move_toward(
+			direction * SPEED,
+			acc * delta)
 		target_base_scale = 0.8
 		current_amplitude = lerp(current_amplitude, deg_to_rad(10), 0.1)
 	else:
-		velocity = Vector2.ZERO
+		velocity = velocity.move_toward(
+			Vector2.ZERO,
+			friction * delta)
 		target_base_scale = 0.9
 		current_amplitude = lerp(current_amplitude, deg_to_rad(2), 0.1)
 	
@@ -56,6 +62,7 @@ func take_damage():
 	if invincible: 
 		return
 	health -= 1
+	get_viewport().get_camera_2d().shake(100.0)
 	$Label.text = str(health)
 	var effect = Hiteffect.instantiate()
 	effect.position = position
@@ -63,7 +70,7 @@ func take_damage():
 	effect.restart()
 	invincible = true 
 	sprite.material.set_shader_parameter("modulate_color", Color.WHITE * 2.0)
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.3).timeout
 	sprite.material.set_shader_parameter("modulate_color", Color.WHITE)
 	invincible = false
 	
@@ -71,6 +78,7 @@ func take_damage():
 		die()
 		
 func die():
+	get_viewport().get_camera_2d().shake(500.0)
 	var effect = Deatheffect.instantiate()
 	effect.position = position
 	get_parent().add_child(effect)
