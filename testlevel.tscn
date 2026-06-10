@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://celcurdbyk2rl" path="res://testlevel.gd" id="1_b5yu0"]
 [ext_resource type="Shader" uid="uid://n7f74f6m0d8m" path="res://Shader/backgroundlowpoly.gdshader" id="1_w3snd"]
 [ext_resource type="Texture2D" uid="uid://ceml7bjpwfpgm" path="res://Assets/icon.svg" id="2_pi5jr"]
-[ext_resource type="PackedScene" uid="uid://q02ls071tw71" path="res://frog_1.tscn" id="3_74kyy"]
-[ext_resource type="PackedScene" uid="uid://dd0b57gusre8d" path="res://Bullet.tscn" id="5_b5yu0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pi5jr"]
 shader = ExtResource("1_w3snd")
@@ -26,11 +24,8 @@ offset_right = 1968.2333
 offset_bottom = 1724.0
 texture = ExtResource("2_pi5jr")
 
-[node name="CharacterBody2D" parent="." unique_id=279591520 instance=ExtResource("3_74kyy")]
-scale = Vector2(0.4, 0.4)
-
 [node name="Timer" type="Timer" parent="." unique_id=829925160]
-wait_time = 0.1
+wait_time = 2.0
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=723789655]
@@ -46,7 +41,3 @@ grow_horizontal = 2
 size_flags_horizontal = 4
 text = "0"
 label_settings = SubResource("LabelSettings_kx2s4")
-
-[node name="Bullet" parent="." unique_id=1262204709 instance=ExtResource("5_b5yu0")]
-position = Vector2(596.99994, 159.99998)
-scale = Vector2(5, 5)

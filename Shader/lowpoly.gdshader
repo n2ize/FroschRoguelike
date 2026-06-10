@@ -2,6 +2,7 @@ shader_type canvas_item;
 
 uniform float cell_size : hint_range(1.0, 100.0) = 30.0;
 uniform float randomness : hint_range(0.0, 1.0) = 0.9;
+uniform vec4 modulate_color : source_color = vec4(1.0,1.0,1.0,1.0);
 
 vec2 hash2(vec2 p) {
     p = vec2(dot(p, vec2(127.1, 311.7)),
@@ -30,5 +31,5 @@ void fragment() {
         }
     }
     
-    COLOR = texture(TEXTURE, best_uv);
+    COLOR = texture(TEXTURE, best_uv) * modulate_color;
 }

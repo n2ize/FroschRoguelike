@@ -13,10 +13,14 @@ shader_parameter/cell_size = 2.6670000791825
 shader_parameter/randomness = 0.9
 shader_parameter/anim_speed = 1.4690000697775
 
-[node name="Bullet" type="Area2D" unique_id=1262204709]
+[node name="Bullet" type="Area2D" unique_id=1262204709 groups=["Bullet"]]
+scale = Vector2(5, 5)
+collision_mask = 3
 script = ExtResource("1_7281b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1746917806]
+light_mask = 7
+visibility_layer = 7
 shape = SubResource("CircleShape2D_7281b")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=570591453]

@@ -8,11 +8,13 @@
 shader = ExtResource("2_suq6n")
 shader_parameter/cell_size = 16.486000308085
 shader_parameter/randomness = 0.9
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jlbju"]
 radius = 174.42764
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=279591520 groups=["player"]]
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_jpmgs")
 metadata/_edit_group_ = true
 
@@ -22,3 +24,11 @@ texture = ExtResource("1_ryn1c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=704902560]
 shape = SubResource("CircleShape2D_jlbju")
+
+[node name="Label" type="Label" parent="." unique_id=1889955082]
+offset_left = -12.5
+offset_top = -252.50003
+offset_right = 27.5
+offset_bottom = -229.50003
+scale = Vector2(3.295, 3.295)
+text = "3"
