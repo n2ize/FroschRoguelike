@@ -5,6 +5,7 @@ var score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_tree().paused = false
 	$Timer.timeout.connect(_on_timer_timeout)
 	var vp = get_viewport_rect().size
 	spawn_player(Vector2(vp.x/2, vp.y/2))

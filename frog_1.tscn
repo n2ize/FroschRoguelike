@@ -25,10 +25,12 @@ texture = ExtResource("1_ryn1c")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=704902560]
 shape = SubResource("CircleShape2D_jlbju")
 
-[node name="Label" type="Label" parent="." unique_id=1889955082]
-offset_left = -12.5
-offset_top = -252.50003
-offset_right = 27.5
-offset_bottom = -229.50003
-scale = Vector2(3.295, 3.295)
-text = "3"
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=673326277]
+offset_left = -147.49998
+offset_top = -217.5
+offset_right = 147.49998
+offset_bottom = -190.5
+show_percentage = false
+
+[node name="HealTimer" type="Timer" parent="." unique_id=1617497930]
+autostart = true

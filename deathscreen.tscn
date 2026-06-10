@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bsbmn82qdiuc5"]
+
+[ext_resource type="Script" uid="uid://dsd7j40oq2kx1" path="res://deathscreen.gd" id="1_ftl74"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2lccq"]
+font_size = 50
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Deathscreen" type="CanvasLayer" unique_id=1488756734]
+process_mode = 3
+script = ExtResource("1_ftl74")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1238207236]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=664584708]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer/Panel" unique_id=1905234198]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.5
+offset_top = -262.0
+offset_right = 279.5
+offset_bottom = 262.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/Panel" unique_id=281908572]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_right = 36.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "You died! 💀"
+label_settings = SubResource("LabelSettings_2lccq")
+
+[node name="Button" type="Button" parent="CenterContainer/Panel/Panel" unique_id=676904160]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.25
+offset_top = -69.25
+offset_right = 121.25
+offset_bottom = 69.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Restart"
+
+[connection signal="pressed" from="CenterContainer/Panel/Panel/Button" to="." method="_on_button_pressed"]

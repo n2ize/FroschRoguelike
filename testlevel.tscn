@@ -28,7 +28,7 @@ offset_bottom = 1652.1315
 texture = ExtResource("2_pi5jr")
 
 [node name="Timer" type="Timer" parent="." unique_id=829925160]
-wait_time = 2.0
+wait_time = 0.5
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=723789655]

@@ -4,7 +4,7 @@ var time = 0.0
 var target_base_scale = 1.0
 var current_amplitude = deg_to_rad(5)
 var last_direction = Vector2.RIGHT
-var health = 3
+var health = 50.0
 var invincible = false
 
 const acc = 5000 #acceleration
@@ -13,8 +13,21 @@ const Deatheffect = preload("res://gpu_particles_deathparticles.tscn")
 const Hiteffect = preload("res://hitindicatorparticles.tscn")
 const Bullet = preload("res://Bullet.tscn")
 
+
 @onready var sprite = $Sprite2D
 
+func _ready()-> void:
+	$ProgressBar.value = health
+	var style = StyleBoxFlat.new()
+	style.bg_color = Color.RED
+	$ProgressBar.add_theme_stylebox_override("fill", style)
+	$HealTimer.timeout.connect(_on_heal_timer_timeout)
+	
+func _on_heal_timer_timeout():
+	print("heal")
+	health += 5
+	$ProgressBar.value = int(health)
+	
 func _physics_process(delta: float) -> void:
 	time += delta
 	var direction = Vector2.ZERO
@@ -61,9 +74,12 @@ func shoot():
 func take_damage():
 	if invincible: 
 		return
-	health -= 1
+	health -= 25.0
+	if health <= 0:
+		die()
+		return
 	get_viewport().get_camera_2d().shake(100.0)
-	$Label.text = str(health)
+	$ProgressBar.value = int(health)
 	var effect = Hiteffect.instantiate()
 	effect.position = position
 	get_parent().add_child(effect)
@@ -74,8 +90,7 @@ func take_damage():
 	sprite.material.set_shader_parameter("modulate_color", Color.WHITE)
 	invincible = false
 	
-	if health == 0:
-		die()
+	
 		
 func die():
 	get_viewport().get_camera_2d().shake(500.0)
@@ -83,5 +98,6 @@ func die():
 	effect.position = position
 	get_parent().add_child(effect)
 	effect.restart()
+	UI_Manager.show_death_screen()
 	queue_free()
 	
