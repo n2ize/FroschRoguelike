@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://q02ls071tw71"]
+
+[ext_resource type="Script" uid="uid://e5c0oy0a3pjr" path="res://Players/frog_1.gd" id="1_q58ml"]
+[ext_resource type="Shader" uid="uid://cq8sp1g523y30" path="res://Shader/lowpoly.gdshader" id="2_6btpv"]
+[ext_resource type="Texture2D" uid="uid://dlbo84c7t15ha" path="res://Assets/froschi.png" id="3_5kqot"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jpmgs"]
+shader = ExtResource("2_6btpv")
+shader_parameter/cell_size = 16.486000308085
+shader_parameter/randomness = 0.9
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jlbju"]
+radius = 155.02014
+
+[node name="Frog_1" type="CharacterBody2D" unique_id=279591520 groups=["player"]]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_q58ml")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1293336409]
+material = SubResource("ShaderMaterial_jpmgs")
+texture = ExtResource("3_5kqot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=704902560]
+shape = SubResource("CircleShape2D_jlbju")

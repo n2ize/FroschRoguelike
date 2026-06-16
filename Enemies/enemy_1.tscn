@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bddiomamtb7dg"]
 
-[ext_resource type="Script" uid="uid://dvl1opgeu8inq" path="res://enemy_1.gd" id="1_663o1"]
+[ext_resource type="Script" uid="uid://dvl1opgeu8inq" path="res://Enemies/enemy_1.gd" id="1_663o1"]
 [ext_resource type="Shader" uid="uid://cq8sp1g523y30" path="res://Shader/lowpoly.gdshader" id="2_ovk8a"]
 [ext_resource type="Texture2D" uid="uid://ceml7bjpwfpgm" path="res://Assets/icon.svg" id="3_gqj32"]
 
@@ -11,6 +11,7 @@ size = Vector2(128, 127.75)
 shader = ExtResource("2_ovk8a")
 shader_parameter/cell_size = 11.4010004940475
 shader_parameter/randomness = 1.0
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5xh7"]
 size = Vector2(129, 128)

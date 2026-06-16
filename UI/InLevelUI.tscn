@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dyund1ubp3sdh"]
+
+[ext_resource type="Script" uid="uid://bjijjxbpkryf3" path="res://UI/in_level_ui.gd" id="1_fmc4j"]
+
+[node name="In_level_Ui" type="CanvasLayer" unique_id=992986904]
+script = ExtResource("1_fmc4j")
+
+[node name="Hearts" type="HBoxContainer" parent="." unique_id=355469843]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 0

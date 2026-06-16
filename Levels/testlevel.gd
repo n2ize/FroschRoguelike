@@ -1,6 +1,7 @@
 extends Node2D
-const Enemy = preload("res://enemy_1.tscn")
-const Frog = preload("res://frog_1.tscn")
+const Enemy = preload("res://Enemies/enemy_1.tscn")
+const Frog = preload("res://Players/frog_1.tscn")
+const Camera = preload("res://Core/camera_2d.tscn")
 var score = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -9,6 +10,8 @@ func _ready() -> void:
 	$Timer.timeout.connect(_on_timer_timeout)
 	var vp = get_viewport_rect().size
 	spawn_player(Vector2(vp.x/2, vp.y/2))
+	spawn_camera()
+	
 
 func _on_timer_timeout():
 	var vp = get_viewport_rect().size
@@ -24,6 +27,10 @@ func spawn_player(pos: Vector2):
 	var player = Frog.instantiate()
 	player.position = pos
 	add_child(player)
+	
+func spawn_camera():
+	var Camera = Camera.instantiate()
+	$CharacterBody2D.add_child(Camera)
 	
 func _on_enemy_died():
 	score += randi_range(7, 12)

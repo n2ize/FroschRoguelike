@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bsbmn82qdiuc5"]
 
-[ext_resource type="Script" uid="uid://dsd7j40oq2kx1" path="res://deathscreen.gd" id="1_ftl74"]
+[ext_resource type="Script" uid="uid://dsd7j40oq2kx1" path="res://UI/deathscreen.gd" id="1_ftl74"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2lccq"]
 font_size = 50

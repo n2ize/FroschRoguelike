@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b5cyvhsdj7jb4"]
+
+[ext_resource type="Shader" uid="uid://cu1k7n753ljyd" path="res://Shader/bulletshader.gdshader" id="1_mxgv4"]
+[ext_resource type="Texture2D" uid="uid://4mc6rfusvstb" path="res://Assets/hearticon.png" id="2_2odeq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qt66y"]
+shader = ExtResource("1_mxgv4")
+shader_parameter/cell_size = 4.7000001757500005
+shader_parameter/randomness = 0.9
+shader_parameter/anim_speed = 0.9600000456
+
+[node name="TextureRect" type="TextureRect" unique_id=1030882864]
+material = SubResource("ShaderMaterial_qt66y")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_2odeq")

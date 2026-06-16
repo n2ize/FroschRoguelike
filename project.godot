@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="FroschRoguelike_Maturaprojekt"
-run/main_scene="uid://dua0gqq8ojiyu"
+run/main_scene="uid://h7fk43duo2at"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://Assets/icon.svg"
+config/icon="uid://bt1qfa8y7hcvp"
 
 [autoload]
 

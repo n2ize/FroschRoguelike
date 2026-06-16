@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://v7qla3f074oi"]
+
+[ext_resource type="Shader" uid="uid://n7f74f6m0d8m" path="res://Shader/backgroundlowpoly.gdshader" id="1_n5b05"]
+[ext_resource type="PackedScene" uid="uid://q02ls071tw71" path="res://Players/frog_1.tscn" id="1_yiy6p"]
+[ext_resource type="Texture2D" uid="uid://ceml7bjpwfpgm" path="res://Assets/icon.svg" id="2_dc1l1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_arqsc"]
+shader = ExtResource("1_n5b05")
+shader_parameter/cell_size = 13.145000576887501
+shader_parameter/speed = 0.4190000199025
+shader_parameter/color_dark = Color(0.30980393, 0.3882353, 0.3882353, 1)
+shader_parameter/color_mid = Color(0.34901962, 0.5803922, 0.5882353, 1)
+shader_parameter/color_light = Color(0.30980393, 0.77254903, 0.7882353, 1)
+
+[node name="Node2D" type="Node2D" unique_id=2104913996]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=592459957]
+material = SubResource("ShaderMaterial_arqsc")
+offset_right = 2008.0
+offset_bottom = 1494.0
+texture = ExtResource("2_dc1l1")
+
+[node name="CharacterBody2D" parent="." unique_id=279591520 instance=ExtResource("1_yiy6p")]
+position = Vector2(934.00006, 510)
+scale = Vector2(2.5, 2.5)
+script = null

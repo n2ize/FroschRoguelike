@@ -3,7 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 var player = null
-const Deatheffect = preload("res://gpu_particles_deathparticles.tscn")
+var damage = 1
+const Deatheffect = preload("res://Effects/gpu_particles_deathparticles.tscn")
 signal died
 
 func _ready() -> void:
@@ -28,12 +29,12 @@ func _physics_process(_delta: float) -> void:
 	velocity = direction * SPEED + separation
 	move_and_slide()
 	
-func _on_area_entered(area): #play here whatever should happen
+func _on_area_entered(area): 
 	#if area == null:
 		#return
 	if area.is_in_group("Bullet"):
 		died.emit() 
-		get_viewport().get_camera_2d().shake(50.0)
+		get_viewport().get_camera_2d().shake(30.0)
 		var effect = Deatheffect.instantiate()
 		effect.position = position
 		get_parent().add_child(effect)
@@ -45,4 +46,4 @@ func _on_body_entered(body):
 	if body == null:
 		return
 	if body.is_in_group("player"):
-		body.take_damage()
+		body.take_damage(damage)

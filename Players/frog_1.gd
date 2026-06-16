@@ -1,32 +1,25 @@
 extends CharacterBody2D
+signal health_changed(current_health)
 const SPEED = 800.0
 var time = 0.0
 var target_base_scale = 1.0
 var current_amplitude = deg_to_rad(5)
 var last_direction = Vector2.RIGHT
-var health = 50.0
+var health = 3.0
 var invincible = false
 
 const acc = 5000 #acceleration
 const friction = 6000
-const Deatheffect = preload("res://gpu_particles_deathparticles.tscn")
-const Hiteffect = preload("res://hitindicatorparticles.tscn")
-const Bullet = preload("res://Bullet.tscn")
+const Deatheffect = preload("res://Effects/gpu_particles_deathparticles.tscn")
+const Hiteffect = preload("res://Effects/hitindicatorparticles.tscn")
+const Bullet = preload("res://Weapons/Bullet.tscn")
 
 
 @onready var sprite = $Sprite2D
 
 func _ready()-> void:
-	$ProgressBar.value = health
 	var style = StyleBoxFlat.new()
 	style.bg_color = Color.RED
-	$ProgressBar.add_theme_stylebox_override("fill", style)
-	$HealTimer.timeout.connect(_on_heal_timer_timeout)
-	
-func _on_heal_timer_timeout():
-	print("heal")
-	health += 5
-	$ProgressBar.value = int(health)
 	
 func _physics_process(delta: float) -> void:
 	time += delta
@@ -71,15 +64,15 @@ func shoot():
 	bullet.direction = last_direction
 	get_parent().add_child(bullet)
 
-func take_damage():
+func take_damage(amount: int):
 	if invincible: 
 		return
-	health -= 25.0
+	health -= amount
+	health_changed.emit(health) #an die ui geschickt
 	if health <= 0:
 		die()
 		return
 	get_viewport().get_camera_2d().shake(100.0)
-	$ProgressBar.value = int(health)
 	var effect = Hiteffect.instantiate()
 	effect.position = position
 	get_parent().add_child(effect)

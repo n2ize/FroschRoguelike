@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://dua0gqq8ojiyu"]
 
-[ext_resource type="Script" uid="uid://celcurdbyk2rl" path="res://testlevel.gd" id="1_b5yu0"]
-[ext_resource type="Shader" uid="uid://n7f74f6m0d8m" path="res://Shader/backgroundlowpoly.gdshader" id="1_w3snd"]
-[ext_resource type="Texture2D" uid="uid://ceml7bjpwfpgm" path="res://Assets/icon.svg" id="2_pi5jr"]
-[ext_resource type="Script" uid="uid://co8fqvcj8a84m" path="res://camera_2d.gd" id="4_kx2s4"]
+[ext_resource type="Script" uid="uid://celcurdbyk2rl" path="res://Levels/testlevel.gd" id="1_6tucp"]
+[ext_resource type="Shader" uid="uid://n7f74f6m0d8m" path="res://Shader/backgroundlowpoly.gdshader" id="2_fe08g"]
+[ext_resource type="Texture2D" uid="uid://ceml7bjpwfpgm" path="res://Assets/icon.svg" id="3_652e1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pi5jr"]
-shader = ExtResource("1_w3snd")
+shader = ExtResource("2_fe08g")
 shader_parameter/cell_size = 3.000000095
 shader_parameter/speed = 1.382000065645
 shader_parameter/color_dark = Color(0.17, 0.17, 0.16, 1)
@@ -17,7 +16,7 @@ shader_parameter/color_light = Color(0.37, 0.37, 0.35, 1)
 font_size = 50
 
 [node name="Node2D" type="Node2D" unique_id=1048977676]
-script = ExtResource("1_b5yu0")
+script = ExtResource("1_6tucp")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=81473670]
 material = SubResource("ShaderMaterial_pi5jr")
@@ -25,7 +24,7 @@ offset_left = -60.0
 offset_top = -154.0
 offset_right = 2002.0
 offset_bottom = 1652.1315
-texture = ExtResource("2_pi5jr")
+texture = ExtResource("3_652e1")
 
 [node name="Timer" type="Timer" parent="." unique_id=829925160]
 wait_time = 0.5
@@ -44,7 +43,3 @@ grow_horizontal = 2
 size_flags_horizontal = 4
 text = "0"
 label_settings = SubResource("LabelSettings_kx2s4")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1393320248]
-anchor_mode = 0
-script = ExtResource("4_kx2s4")

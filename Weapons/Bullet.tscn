@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dd0b57gusre8d"]
 
 [ext_resource type="Shader" uid="uid://cu1k7n753ljyd" path="res://Shader/bulletshader.gdshader" id="1_4s4u5"]
-[ext_resource type="Script" uid="uid://btf7whwcetgt7" path="res://bullet.gd" id="1_7281b"]
+[ext_resource type="Script" uid="uid://btf7whwcetgt7" path="res://Weapons/bullet.gd" id="1_7281b"]
 [ext_resource type="Texture2D" uid="uid://q65useh16d1q" path="res://Assets/bullet.png" id="1_ayd6b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7281b"]
-radius = 7.0
+radius = 7.6739097
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7281b"]
 shader = ExtResource("1_4s4u5")
