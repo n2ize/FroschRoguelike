@@ -78,3 +78,4 @@ grow_vertical = 0
 text = "go to main menu"
 
 [connection signal="pressed" from="CenterContainer/Panel/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/Panel/MainMenu" to="." method="_on_main_menu_pressed"]
