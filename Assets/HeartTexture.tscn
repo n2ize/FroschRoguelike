@@ -11,6 +11,7 @@ shader_parameter/anim_speed = 0.9600000456
 
 [node name="TextureRect" type="TextureRect" unique_id=1030882864]
 material = SubResource("ShaderMaterial_qt66y")
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(90, 90)
+offset_right = 128.0
+offset_bottom = 128.0
 texture = ExtResource("2_2odeq")

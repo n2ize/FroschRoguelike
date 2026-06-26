@@ -30,7 +30,7 @@ func spawn_player(pos: Vector2):
 	
 func spawn_camera():
 	var Camera = Camera.instantiate()
-	$CharacterBody2D.add_child(Camera)
+	add_child(Camera)
 	
 func _on_enemy_died():
 	score += randi_range(7, 12)
